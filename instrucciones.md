@@ -53,6 +53,8 @@ ruta de redirección al componente "Home". Trabaja el atributo pathMatch.
 ruta 'movies' al componente MovieList,
 ruta dinámica: 'movies/:movieId' al componente MovieDetails,
 ruta comodín:'**' al componente NotFound
+
+
 En la plantilla src/app/app.html:
 Limpia el código dejando solo la etiqueta
 Crea una barra de navegación con las siguientes indicaciones:
