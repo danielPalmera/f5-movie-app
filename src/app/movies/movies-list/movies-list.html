@@ -1,5 +1,5 @@
-<ul>
-    <li><a [routerLink]="['/movies', 1]">Movie 1 </a></li>
-    <li><a [routerLink]="['/movies', 2]">Movie 2</a></li>
-    <li><a [routerLink]="['/movies', 3]">Movie 3</a></li>
-</ul> 
+<ul class="">
+@for(movie of movies; track movie.id){
+    <li><a [routerLink]="['/movies', movie.id]">{{ movie.title }}</a></li>
+}
+</ul>

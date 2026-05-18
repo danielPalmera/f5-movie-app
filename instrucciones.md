@@ -73,19 +73,26 @@ Definir rutas con parámetros de URL.
 Acceder a los parámetros de ruta utilizando ActivatedRoute.
 Utilizar Router para la navegación programática.
 Pasos a Seguir
+
 Usa un servicio para proporcionar datos al catálogo:
 Crea un servicio con el nombre movies-service que incluya un array de 3 películas de prueba. Los datos serán:
 id (string)
 title (string)
 director (string)
 genre (string)
+
 Crea un interface con el nombre Movie, en un archivo aparte para tipar los datos del array.
+
 Modifica el componente MovieList para mostrar un listado de películas y enlaces dinámicos:
+
 Inyecta el servicio MovieService en el componente MovieList.
 Lee la lista de películas en el template.
+
 Crea enlaces a cada película utilizando routerLink con un array de parámetros para la ruta dinámica: [routerLink]="['/movies', movie.id]".
-Modifica el componente MovieDetails para acceder a los parámetros de ruta:
-Sigue la documentación oficial para obtener el parámetro de la ruta: movieId.
+
+    Modifica el componente MovieDetails para acceder a los parámetros de ruta:
+    Sigue la documentación oficial para obtener el parámetro de la ruta: movieId.
+    
 Con el movieId, busca la película correspondiente en tu array de datos.
 Implementa un botón "Volver al listado" que utilice la navegación programática con Router.navigate() para volver al listado.
 Incorpora en el template una vista para el caso de que el parámetro no devuelva ninguna película. (tip: utiliza @if para la renderización selectiva)
