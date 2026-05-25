@@ -1,5 +1,4 @@
 import { Component, inject, signal } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Breadcrumbs } from '../../breadcrumbs/breadcrumbs';
 import { ImdbService } from '../../services/imdb-service';
@@ -8,7 +7,7 @@ import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-movie-details',
-  imports: [Breadcrumbs, UpperCasePipe],
+  imports: [Breadcrumbs],
   templateUrl: './movie-details.html',
   styleUrls: ['./movie-details.css'],
 })
