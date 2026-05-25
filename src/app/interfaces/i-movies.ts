@@ -1,6 +1,8 @@
+import { IMovie } from './i-movie';
+
 export interface IMovies {
-    id: string;
-    title: string;
-    director: string;
-    genre: string;
+    page: number;
+    results: IMovie[];
+    total_pages: number;
+    total_results: number;
 }

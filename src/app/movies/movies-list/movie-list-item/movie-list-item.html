@@ -1,0 +1,9 @@
+<a [routerLink]="['/movies', movie().id]" class="group flex flex-col rounded-lg overflow-hidden shadow-md bg-blue-400 hover:scale-105 transition-transform duration-200">
+  <img
+    [src]="movie().poster_path ? (imageUrl + movie().poster_path) : 'assets/placeholder.png'"
+    class="w-full object-cover aspect-[2/3]"
+  />
+  <div class="p-2">
+    <h3 class="text-white text-sm font-medium text-center leading-tight line-clamp-2">{{ movie().title }}</h3>
+  </div>
+</a>

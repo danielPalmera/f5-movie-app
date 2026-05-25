@@ -1,5 +1,26 @@
-<div>
-  <app-breadcrumbs></app-breadcrumbs>
-  <h1>Detalles de la Película</h1>
-  <p>ID de la película: {{ movieId }}</p>
+<div class="min-h-screen bg-gray-950 text-white">
+  <app-breadcrumbs />
+
+  @if (movie(); as m) {
+    <div class="max-w-3xl mx-auto p-6 flex flex-col items-center gap-6">
+
+      <img
+        [src]="m.poster_path ? (imageUrl + m.poster_path) : 'assets/placeholder.png'"
+        [alt]="m.title + ' poster'"
+        class="w-64 rounded-xl shadow-lg"
+      />
+
+      <h1 class="text-3xl font-bold text-center">{{ m.title }}</h1>
+
+      <ul class="w-full space-y-2 text-sm text-gray-300 list-disc list-inside">
+        <li><span class="text-white font-semibold">Fecha de estreno:</span> {{ m.release_date }}</li>
+        <li><span class="text-white font-semibold">Solo adultos:</span> {{ m.adult ? 'Sí' : 'No' }}</li>
+        <li class="text-gray-500">{{ (m.genres ?? []).map(g => g.name).join(', ') || (m.genre_ids ?? []).join(', ') }}</li>
+      </ul>
+      <p>{{ m.overview }}</p>
+
+    </div>
+  } @else {
+    <p class="text-center text-gray-400 mt-10">Cargando película...</p>
+  }
 </div>
